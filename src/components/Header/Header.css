@@ -1,0 +1,174 @@
+header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    flex-direction: row;
+    position: fixed;
+    top: 0%;
+    z-index: 999;
+}
+
+header b{
+    background-color: #007bff;
+    padding: 20px;
+    color: white;
+    font-size: large;
+    font-weight: 500;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items:  center;
+    background-color: #007bff;
+    color: white;
+}                                                                    
+nav h2{
+    background-color: #007bff;
+    padding-right: 270px;
+    margin-left: 100px;
+    color: white;
+    font-size: 30px;
+}
+nav button{
+    margin-left: 20px;
+    background-color: rgb(101, 201, 101);
+    color: white;
+    font-weight: bold;
+}
+
+.hamburger-menu {
+    display: none;
+    /* Hide on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    right: 1.5rem; /* adjust this to push away from edge */
+    transform: translateY(-50%);
+    z-index: 1002;
+    /* Ensure it's above the drawer if needed */
+  }
+  
+  .hamburger-icon {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* Drawer Navigation (hidden by default) */
+  .drawer-nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    /* Start off-screen to the right */
+    width: 200px;
+    /* Width of the drawer */
+    height: 100%;
+    background-color: #F8F9FA;
+    /* Light background for drawer */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    /* Slide-in animation */
+    z-index: 1100;
+    /* Above page content, below overlay */
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    /* Space for close button/header */
+  }
+  
+  .drawer-nav.open {
+    right: 0;
+    /* Slide in when open */
+  }
+  
+  .drawer-nav .nav-item {
+    color: #343A40;
+    /* Darker text for drawer links */
+    padding: 15px 20px;
+    border-bottom: 1px solid #E0E0E0;
+    width: 100%;
+    /* Full width links */
+    box-sizing: border-box;
+    /* Include padding in width */
+  }
+  
+  .drawer-nav .nav-item:hover {
+    background-color: #E9ECEF;
+    color: #007BFF;
+    border-bottom: 1px solid #E0E0E0;
+    /* Reset border for hover if needed */
+  }
+  
+  .drawer-nav .nav-item.btn.primary-btn {
+    /* margin: 50px; Space for button in drawer */
+  
+    text-align: center;
+    background-color: #28a745;
+  }
+  
+  /* Close button inside drawer */
+  .close-drawer-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #343A40;
+    cursor: pointer;
+    z-index: 1010;
+  }
+  /* Overlay when drawer is open */
+.drawer-overlay {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black */
+  z-index: 1000;
+  /* Below drawer, above page content */
+}
+
+.drawer-nav.open+.drawer-overlay {
+  display: block;
+  /* Show when drawer is open */
+}
+
+/* --- Media Queries for Mobile --- */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+    /* Hide desktop nav on mobile */
+  }
+
+  .hamburger-menu {
+    display: block;
+    margin-left: auto;
+    /* Show hamburger on mobile */
+  }
+
+  .main-header {
+    justify-content: space-between;
+    /* Ensure name and hamburger are spaced */
+  }
+
+  .college-name {
+    font-size: 1.5em;
+    /* Adjust college name size on mobile */
+}
+}
